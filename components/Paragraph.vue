@@ -10,5 +10,4 @@
 <script setup>
 let { block } = defineProps(['block'])
 let paragraph = block.paragraph
-console.log(paragraph)
 </script>

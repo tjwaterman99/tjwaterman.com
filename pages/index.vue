@@ -1,5 +1,5 @@
 <template>
-<h1 class="font-bold text-3xl mb-4">Tom's Blog</h1>
+<h1 class="font-bold text-3xl mb-4 lg:mt-16">Tom's Blog</h1>
 <ul>
     <li v-for="page in homepage.results" class="mt-2 flex justify-between">
         <NuxtLink :to="{name: 'articles-slug', params: {'slug': page.id}}" class="hover:text-blue-400">{{ page.child_page.title }}</NuxtLink>
