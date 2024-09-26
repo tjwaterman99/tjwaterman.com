@@ -11,10 +11,10 @@
 
 <script setup>
 import { Client } from '@notionhq/client';
+
 const client = new Client({
     auth: process.env.NOTION_API_KEY
 })
-
 
 function formatDate(ts) {
     var d = new Date(ts)
