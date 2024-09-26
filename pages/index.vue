@@ -4,7 +4,6 @@
     <li v-for="page in homepage.results" class="mt-2 flex justify-between">
         <NuxtLink :to="{name: 'articles-slug', params: {'slug': page.id}}" class="hover:text-blue-400">{{ page.child_page.title }}</NuxtLink>
         <p>{{ formatDate(page.created_time) }}</p>
-
     </li>
 </ul>
 </template>

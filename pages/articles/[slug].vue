@@ -1,7 +1,9 @@
 <template>
-    <div>
-        <NuxtLink to="/" class="pb-4">Home</NuxtLink>
-        <component :is="loadComponent(block.type)" v-for="block of page_details.results" :block="block"></component>
+    <div class="pb-12 mt-2">
+        <div class="bg-gray-100 p-2">
+            <NuxtLink to="/" class="pb-4">Home</NuxtLink>
+        </div>
+        <Block class="px-2" v-for="block of page_details.results" :block="block"/>
     </div>
 </template>
 
