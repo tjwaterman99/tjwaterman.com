@@ -14,7 +14,7 @@
 	],
 
 	"mounts": [
-		"source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind"
+		"source=${localEnv:HOME}/.ssh,target=/home/node/.ssh,type=bind"
 	]
 
 	// Use 'postCreateCommand' to run commands after the container is created.
