@@ -2,7 +2,7 @@
 <h1 class="font-bold text-3xl mb-4 lg:mt-16">Tom's Blog</h1>
 <ul>
     <li v-for="page in homepage.results" class="mt-2 flex justify-between">
-        <NuxtLink :to="{name: 'articles-slug', params: {'slug': page.id}}" class="hover:text-blue-400">{{ page.child_page.title }}</NuxtLink>
+        <NuxtLink :to="{name: 'articles-id-slug', params: {'id': page.id, slug: slugify(page.child_page.title)}}" class="hover:text-blue-400">{{ page.child_page.title }}</NuxtLink>
         <div class="border-b-2 border-dotted border-gray-200 grow mx-2 mb-1"></div>
         <p>{{ formatDate(page.created_time) }}</p>
     </li>
@@ -19,6 +19,25 @@ const client = new Client({
 function formatDate(ts) {
     var d = new Date(ts)
     return d.toDateString()
+}
+
+function slugify(input) {
+    if (!input)
+        return '';
+
+    // make lower case and trim
+    var slug = input.toLowerCase().trim();
+
+    // remove accents from charaters
+    slug = slug.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+
+    // replace invalid chars with spaces
+    slug = slug.replace(/[^a-z0-9\s-]/g, ' ').trim();
+
+    // replace multiple spaces or hyphens with a single hyphen
+    slug = slug.replace(/[\s-]+/g, '-');
+
+    return slug;
 }
 
 const homepage = await client.blocks.children.list({
