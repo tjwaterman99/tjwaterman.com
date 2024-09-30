@@ -2,7 +2,7 @@
 <h1 class="font-bold text-3xl mb-4 lg:mt-16">Tom's Blog</h1>
 <ul>
     <li v-for="page in homepage.results" class="mt-2 flex justify-between">
-        <NuxtLink :to="{name: 'articles-id-slug', params: {'id': page.id, slug: slugify(page.child_page.title)}}" class="hover:text-blue-400">{{ page.child_page.title }}</NuxtLink>
+        <NuxtLink :to="{name: 'articles-id-slug', params: {'id': format_block_id(page.id), slug: slugify(page.child_page.title)}}" class="hover:text-blue-400">{{ page.child_page.title }}</NuxtLink>
         <div class="border-b-2 border-dotted border-gray-200 grow mx-2 mb-1"></div>
         <p>{{ formatDate(page.created_time) }}</p>
     </li>
@@ -19,6 +19,10 @@ const client = new Client({
 function formatDate(ts) {
     var d = new Date(ts)
     return d.toDateString()
+}
+
+function format_block_id(block_id) {
+    return block_id.replaceAll('-', '')
 }
 
 function slugify(input) {
@@ -43,4 +47,5 @@ function slugify(input) {
 const homepage = await client.blocks.children.list({
     block_id: '10d87f475d79800d88f5fc65da2df06b', page_size: 50
 })
+
 </script>
