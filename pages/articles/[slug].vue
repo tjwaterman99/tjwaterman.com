@@ -36,6 +36,6 @@ function getArticleMetadataBySlug(slug) {
 }
 
 let metadata = getArticleMetadataBySlug(slug)
-let page = fs.readFile(path.join(`.site/${metadata.id}.json`), {encoding: 'utf8'})
 
+let page = JSON.parse(await fs.readFile(path.join(`.site/${metadata.id}.json`), {encoding: 'utf8'}))
 </script>
