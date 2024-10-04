@@ -11,6 +11,8 @@
 <script setup>
 import { Paragraph, BulletedListItem } from "#components";
 import manifest from '@/.site/manifest.json'
+import * as fs from 'fs/promises'
+import path from 'path'
 
 const route = useRoute();
 const slug = route.params.slug
@@ -34,7 +36,6 @@ function getArticleMetadataBySlug(slug) {
 }
 
 let metadata = getArticleMetadataBySlug(slug)
-
-let page = await import("@/.site/" + metadata.id + '.json')
+let page = fs.readFile(path.join(`.site/${metadata.id}.json`), {encoding: 'utf8'})
 
 </script>
