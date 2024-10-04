@@ -14,7 +14,6 @@
   "dependencies": {
     "@notionhq/client": "^2.2.15",
     "@nuxtjs/tailwindcss": "^6.12.1",
-    "add": "^2.0.6",
     "notion-dl": "github:tjwaterman99/notion-dl",
     "nuxt": "^3.13.0",
     "tsx": "^4.19.1",
