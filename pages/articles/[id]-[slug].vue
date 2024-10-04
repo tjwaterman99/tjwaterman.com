@@ -1,6 +1,6 @@
 <template>
-    <div class="pb-12 mt-2 article">
-        <div class="m-2 mt-4 flex flex-col md:flex-row justify-between md:items-end">
+    <div class="p-2">
+        <div class="mt-4 flex flex-col md:flex-row justify-between md:items-end mb-6">
             <h1 class="font-extrabold text-2xl align-middle mb-2 md:mb-0">{{ page.child_page.title }}</h1>
             <div class="font-light text-gray-600 text-xl align-middle">{{ formatDate(page.created_time) }}</div>
         </div>
@@ -29,15 +29,8 @@ function formatDate(ts) {
     return d.toDateString()
 }
 
+const page = await client.blocks.retrieve({block_id: block_id})
 const page_details = await client.blocks.children.list({
     block_id: block_id, page_size: 50
 })
-
-const page = await client.blocks.retrieve({block_id: block_id})
-
-
 </script>
-
-<style>
-
-</style>

@@ -8,7 +8,6 @@
 import { Paragraph, BulletedListItem, ChildPage } from "#components";
 let { block } = defineProps(['block']);
 const route = useRoute();
-const block_id = route.params.slug;
 
 const component_map = {
     'paragraph': Paragraph,

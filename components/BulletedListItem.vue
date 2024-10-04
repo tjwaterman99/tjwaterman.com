@@ -1,5 +1,5 @@
 <template>
-    <p>{{ block }}</p>
+    <div>{{ block }}</div>
 </template>
 
 <script setup>

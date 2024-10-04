@@ -1,12 +1,12 @@
 <template>
-<div>
-<ul>
-    <li v-for="page in homepage.results" class="mt-2 flex justify-between">
-        <NuxtLink :to="{name: 'articles-id-slug', params: {'id': format_block_id(page.id), slug: slugify(page.child_page.title)}}" class="hover:text-blue-400">{{ page.child_page.title }}</NuxtLink>
-        <div class="border-b-2 border-dotted border-gray-600 grow mx-2 mb-1 pb-1"></div>
-        <p>{{ formatDate(page.created_time) }}</p>
-    </li>
-</ul>
+<div class="p-2">
+    <ul>
+        <li v-for="page in homepage.results" class="mt-2 flex justify-between">
+            <NuxtLink :to="{name: 'articles-id-slug', params: {'id': format_block_id(page.id), slug: slugify(page.child_page.title)}}" class="hover:text-blue-400">{{ page.child_page.title }}</NuxtLink>
+            <div class="border-b-2 border-dotted border-gray-600 mb-1 pb-1"></div>
+            <p>{{ formatDate(page.created_time) }}</p>
+        </li>
+    </ul>
 </div>
 </template>
 
