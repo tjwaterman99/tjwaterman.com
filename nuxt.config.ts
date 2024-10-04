@@ -5,5 +5,8 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss'],
   features: {
     noScripts: true
+  },
+  alias: {
+    '@@': '<rootDir>'
   }
 })
