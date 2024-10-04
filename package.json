@@ -12,6 +12,7 @@
   "dependencies": {
     "@notionhq/client": "^2.2.15",
     "@nuxtjs/tailwindcss": "^6.12.1",
+    "notion-dl": "github:tjwaterman99/notion-dl",
     "nuxt": "^3.13.0",
     "vue": "latest",
     "vue-router": "latest"

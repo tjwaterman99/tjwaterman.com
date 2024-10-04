@@ -1,13 +1,10 @@
 <template>
-    <div class="pb-12 mt-2">
-        <div class="bg-cyan-800 p-2">
-            <NuxtLink to="/" class="pb-4 text-white">← Tom's Blog</NuxtLink>
-        </div>
-        <div class="m-2 mt-4 flex flex-row justify-between items-end">
-            <h1 class="font-extrabold text-2xl align-middle">{{ page.child_page.title }}</h1>
+    <div class="pb-12 mt-2 article">
+        <div class="m-2 mt-4 flex flex-col md:flex-row justify-between md:items-end">
+            <h1 class="font-extrabold text-2xl align-middle mb-2 md:mb-0">{{ page.child_page.title }}</h1>
             <div class="font-light text-gray-600 text-xl align-middle">{{ formatDate(page.created_time) }}</div>
         </div>
-        <Block class="px-2" v-for="block of page_details.results" :block="block"/>
+        <Block v-for="block of page_details.results" :block="block"/>
     </div>
 </template>
 
@@ -40,3 +37,7 @@ const page = await client.blocks.retrieve({block_id: block_id})
 
 
 </script>
+
+<style>
+
+</style>
