@@ -11,10 +11,5 @@
 </template>
 
 <script setup>
-function formatDate(ts) {
-    var d = new Date(ts)
-    return d.toDateString()
-}
-
 import manifest from '@/.site/manifest.json'
 </script>

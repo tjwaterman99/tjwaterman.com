@@ -1,7 +1,7 @@
 <template>
-    <div class="container mx-auto md:max-w-xl xl:min-w-xl">
+    <div class="container mx-auto max-w-2xl">
         <div class="content">
-        <div class="bg-cyan-800 p-2">
+        <div class="bg-cyan-800 p-2 mt-2">
             <NuxtLink to="/" class="text-white text-lg">Tom's Blog</NuxtLink>
         </div>
         <slot />
