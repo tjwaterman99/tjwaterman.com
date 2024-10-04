@@ -20,6 +20,8 @@ async function savePage(block_id: string, content: string) {
     fs.writeFile(outpath, content)
 }
 
+console.log("Starting")
+
 await fs.mkdir(outputdir).catch( (err) => console.log("Error making .site dir. Skipping."))
 
 client.blocks.children.list({block_id: rootpage, page_size: 100}).then( (resp) => {
